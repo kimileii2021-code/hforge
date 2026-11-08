@@ -135,7 +135,7 @@ flowchart LR
 
 ```text
 请帮我把这个 GitHub 仓库克隆安装到你的 skills 目录，并完成依赖环境检查：
-https://github.com/<your-username>/hforge
+https://github.com/kimileii2021-code/hforge
 Agent 会自动识别自身 skills 目录（如 `~/.codex/skills/hforge`），自动拉取并完成接入！
 
 ---
@@ -145,12 +145,12 @@ Agent 会自动识别自身 skills 目录（如 `~/.codex/skills/hforge`），�
 
 ```powershell
 # Windows (PowerShell)
-git clone https://github.com/<your-username>/hforge.git "$HOME\.codex\skills\hforge"
+git clone https://github.com/kimileii2021-code/hforge.git "$HOME\.codex\skills\hforge"
 ```
 
 ```bash
 # macOS / Linux
-git clone https://github.com/<your-username>/hforge.git ~/.codex/skills/hforge
+git clone https://github.com/kimileii2021-code/hforge.git ~/.codex/skills/hforge
 ```
 > 💡 *注：若使用 Claude Code 或其他 Agent，只需将路径中的 `.codex` 替换为 `.claude` 或 `.agents` 即可。*
 
