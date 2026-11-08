@@ -6,7 +6,6 @@
 
 [![Skill Type](https://img.shields.io/badge/AI_Agent-Skill-blue?style=flat-square)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/konlu/hforge?style=flat-square)](https://github.com/konlu/hforge)
 [![Track](https://img.shields.io/badge/赛道-历史叙事_%7C_人物故事-orange?style=flat-square)](#)
 [![ corpus](https://img.shields.io/badge/内置对标库-353%2B_篇高赞文案-success?style=flat-square)](#)
 [![Visual](https://img.shields.io/badge/内置画风-3_套视觉体系_%2B_参考图库-purple?style=flat-square)](#)
@@ -17,7 +16,7 @@
   既能「一句话一条龙」生成完整剪映工程，也能像搭积木一样「只写稿 / 只优化开头钩子 / 只拆镜生图 / 用现成素材做剪映草稿」。
 </p>
 
-[✨ 核心亮点](#-核心亮点) • [🛠️ 四大核心模块详解](#️-四大核心模块详解) • [🚀 快速开始](#-快速开始) • [🎛️ 灵活的工作流开关](#️-灵活的工作流开关) • [💬 常用提示词示例](#-常用提示词示例) • [📦 依赖与隐私说明](#-依赖与隐私说明) • [☕ 赞赏支持](#-赞赏支持-sponsor) • [📬 联系方式](#-联系方式-contact)
+[✨ 核心亮点](#-核心亮点) • [🛠️ 四大核心模块详解](#️-四大核心模块详解) • [🚀 快速开始](#-快速开始) • [🎛️ 灵活的工作流开关](#️-灵活的工作流开关) • [💬 常用提示词示例](#-常用提示词示例) • [📦 依赖与隐私说明](#-依赖与隐私说明)
 
 </div>
 
@@ -136,7 +135,7 @@ flowchart LR
 
 ```text
 请帮我把这个 GitHub 仓库克隆安装到你的 skills 目录，并完成依赖环境检查：
-https://github.com/konlu/hforge
+https://github.com/<your-username>/hforge
 Agent 会自动识别自身 skills 目录（如 `~/.codex/skills/hforge`），自动拉取并完成接入！
 
 ---
@@ -146,12 +145,12 @@ Agent 会自动识别自身 skills 目录（如 `~/.codex/skills/hforge`），�
 
 ```powershell
 # Windows (PowerShell)
-git clone https://github.com/konlu/hforge.git "$HOME\.codex\skills\hforge"
+git clone https://github.com/<your-username>/hforge.git "$HOME\.codex\skills\hforge"
 ```
 
 ```bash
 # macOS / Linux
-git clone https://github.com/konlu/hforge.git ~/.codex/skills/hforge
+git clone https://github.com/<your-username>/hforge.git ~/.codex/skills/hforge
 ```
 > 💡 *注：若使用 Claude Code 或其他 Agent，只需将路径中的 `.codex` 替换为 `.claude` 或 `.agents` 即可。*
 
@@ -282,46 +281,6 @@ hforge/
 - **零私人信息残留**：本开源仓库的源码、示例与语料索引均经过脱敏与哈希化处理，不包含任何个人电脑路径、账户信息或密钥。
 - **密钥安全存储**：豆包语音 `API Key` 仅从环境变量 `DOUBAO_TTS_API_KEY` 或系统级安全凭据文件读取（Windows 采用当前用户 DPAPI 加密，macOS/Linux 采用 `0600` 权限私密文件），**绝不写入对话日志、项目 JSON 或 Git 仓库**。
 - **费用透明可控**：Skill 本身完全免费开源。豆包语音合成（TTS）与宿主环境中的 AI 生图工具可能产生对应服务商的 API 费用；Agent 在首次合成或批量生图前均会征求确认，绝不在后台静默发起循环重试扣费。
-
----
-
-## 🙏 致谢 (Acknowledgements)
-
-hforge 的诞生离不开以下优秀开源项目与基础设施的支持，特此向相关作者与维护者致敬：
-
-- **[GuanYixuan / pyJianYingDraft](https://github.com/GuanYixuan/pyJianYingDraft)** (Apache-2.0)：提供强大的剪映专业版草稿数据结构、轨道、关键帧与工程生成能力。
-- **[MarsWave / Coli](https://github.com/marswaveai/coli)** & **[k2-fsa / sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx)**：提供快速、精准的本地离线语音识别 CLI 与底层推理引擎。
-- **[OpenAI / imagegen](https://github.com/openai/skills/tree/main/skills/.system/imagegen)**：提供图像生成工作流协作参考。
-- **[Astral / uv](https://github.com/astral-sh/uv)**、**[Node.js](https://nodejs.org/)**、**[FFmpeg](https://ffmpeg.org/)**、**[python-websockets](https://github.com/python-websockets/websockets)**、**[Pillow](https://python-pillow.github.io/)**、**[NumPy](https://numpy.org/)**：提供坚实的跨平台环境管理与多媒体处理底座。
-- **[火山引擎 / 豆包语音大模型](https://docs.volcengine.com/docs/DoubaoVoice/bidirectional-streaming-text-to-speech-websocket?lang=zh)**：提供自然流畅的中文语音合成服务支持。
-
----
-
-## ☕ 赞赏支持 (Sponsor)
-
-<span id="sponsor"></span>
-
-如果你觉得 **hforge** 对你的短视频创作、自媒体运营或 AI Agent 工作流有所帮助，欢迎赞赏支持！
-
-> **特别声明：本项目所有的赞赏将会全部捐献给山区儿童以及重病患者，用于公益助学与医疗救助。感谢每一位支持者的善意与温度！**
-
-<div align="center">
-
-|                                               微信赞赏码                                                |                                              支付宝赞赏码                                               |
-| :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
-| <img src="assets/sponsor/wechat-pay.png" width="220" alt="微信赞赏码"/><br/><sub>支持微信扫码赞赏</sub> | <img src="assets/sponsor/alipay.png" width="220" alt="支付宝收款码"/><br/><sub>支持支付宝扫码赞赏</sub> |
-
-</div>
-
----
-
-## 📬 联系方式 (Contact)
-
-欢迎自媒体创作者、独立开发者、AI 爱好者一起交流探索新玩法：
-
-- **微信咨询**：添加个人微信：muyu1888（请备注：`hforge` 或 `自媒体创作`）
-- **电子邮箱**：`lukonn@163.com`
-- **问题反馈**：欢迎在 [GitHub Issues](https://github.com/konlu/hforge/issues) 提交 Bug 反馈与新功能建议
 
 ---
 

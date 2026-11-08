@@ -15,7 +15,7 @@ description: 历史与真实人物故事的中文内容制作，按需独立执�
 
 启动器支持缺Python时配置用户专用Python，再按需安装Node.js、FFmpeg、媒体库及Coli；Windows草稿用户可一并安装缺少的剪映。安装失败由Agent查看原因并修复，实际缺少操作系统授权、账户登录或工具权限时才向用户说明所需操作，不能把失败转换成一串手动命令。生图工具授权单独验证，不把说明文件存在当作工具可用。复制目录本身不会执行安装，首次调用才触发检查。
 
-草稿导出直接使用Python库 `pyJianYingDraft==0.3.1`，无需安装额外草稿技能。实际生图可用宿主图像工具，`imagegen` 是可选指导技能；Coli是本地转录CLI。依赖与作者见 [README](README.md)。
+草稿导出直接使用Python库 `pyJianYingDraft==0.3.1`，无需安装额外草稿技能。实际生图可用宿主图像工具，`imagegen` 是可选指导技能；Coli是本地转录CLI。依赖说明见 [README](README.md)。
 
 初始化后，所有模块示例中的python、python3或py -3.11均替换为外部runtime.json记录的python可执行程序绝对路径；不能假设便携安装已加入全局PATH或存在py启动器。
 
