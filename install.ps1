@@ -1,9 +1,9 @@
-﻿# Story Studio Installer (Windows PowerShell)
+# 史鉴工坊 安装器 (Windows PowerShell)
 $ErrorActionPreference = 'Stop'
 [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding($false)
 
 Write-Host "==========================================" -ForegroundColor Cyan
-Write-Host " Story Studio 故事工坊 一键安装器" -ForegroundColor Cyan
+Write-Host " 史鉴工坊 一键安装器" -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
 
 $userHome = [Environment]::GetFolderPath('UserProfile')
@@ -30,7 +30,7 @@ if (-not (Test-Path -LiteralPath $targetSkillsDir)) {
     New-Item -ItemType Directory -Path $targetSkillsDir -Force | Out-Null
 }
 
-$destDir = Join-Path $targetSkillsDir "story-studio"
+$destDir = Join-Path $targetSkillsDir "hforge"
 $srcDir = $PSScriptRoot
 
 Write-Host "检测到 Agent 技能目录: $targetSkillsDir" -ForegroundColor Green
@@ -47,7 +47,7 @@ if ($srcDir.TrimEnd('\') -ieq $destDir.TrimEnd('\')) {
     Write-Host "[OK] 技能文件安装完成！" -ForegroundColor Green
 }
 
-$bootstrapScript = Join-Path $destDir "scripts\bootstrap.ps1"
+$bootstrapScript = Join-Path $destDir "tools\bootstrap.ps1"
 if (Test-Path -LiteralPath $bootstrapScript) {
     Write-Host ""
     Write-Host "正在运行环境依赖检查..." -ForegroundColor Cyan
@@ -62,5 +62,5 @@ Write-Host ""
 Write-Host "==========================================" -ForegroundColor Green
 Write-Host "安装完成！" -ForegroundColor Green
 Write-Host "现在你可以打开你的 AI Agent，直接发送：" -ForegroundColor White
-Write-Host "  使用 `$story-studio，帮我一键配置全部运行环境。" -ForegroundColor Yellow
+Write-Host "  使用 `$hforge，帮我一键配置全部运行环境。" -ForegroundColor Yellow
 Write-Host "==========================================" -ForegroundColor Green

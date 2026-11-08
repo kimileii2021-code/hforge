@@ -2,7 +2,7 @@
 set -e
 
 echo "=========================================="
-echo " 🎬 Story Studio · 故事工坊 一键安装器"
+echo " 🎬 史鉴工坊 一键安装器"
 echo "=========================================="
 
 USER_HOME="$HOME"
@@ -22,7 +22,7 @@ if [ -z "$TARGET_SKILLS_DIR" ]; then
 fi
 
 mkdir -p "$TARGET_SKILLS_DIR"
-DEST_DIR="$TARGET_SKILLS_DIR/story-studio"
+DEST_DIR="$TARGET_SKILLS_DIR/hforge"
 SRC_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "目标技能目录: $TARGET_SKILLS_DIR"
@@ -37,15 +37,15 @@ else
     echo "[OK] 技能文件安装完成！"
 fi
 
-if [ -f "$DEST_DIR/scripts/bootstrap.sh" ]; then
+if [ -f "$DEST_DIR/tools/bootstrap.sh" ]; then
     echo ""
     echo "正在运行环境依赖检查..."
-    bash "$DEST_DIR/scripts/bootstrap.sh" check || true
+    bash "$DEST_DIR/tools/bootstrap.sh" check || true
 fi
 
 echo ""
 echo "=========================================="
 echo "🎉 安装完成！"
 echo "现在你可以在 AI Agent 中直接发送："
-echo "  使用 \$story-studio，帮我一键配置全部运行环境。"
+echo "  使用 \$hforge，帮我一键配置全部运行环境。"
 echo "=========================================="

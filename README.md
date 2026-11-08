@@ -1,12 +1,12 @@
 <div align="center">
 
-# 🎬 Story Studio · 故事工坊
+# 🎬 史鉴工坊 · hforge
 
 **从「选题 → 文案 → 配音 → 配图 → 剪映草稿」的一站式 AI 短视频内容创作 Skill**
 
 [![Skill Type](https://img.shields.io/badge/AI_Agent-Skill-blue?style=flat-square)](#)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg?style=flat-square)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/konlu/story-studio?style=flat-square)](https://github.com/konlu/story-studio)
+[![GitHub Stars](https://img.shields.io/github/stars/konlu/hforge?style=flat-square)](https://github.com/konlu/hforge)
 [![Track](https://img.shields.io/badge/赛道-历史叙事_%7C_人物故事-orange?style=flat-square)](#)
 [![ corpus](https://img.shields.io/badge/内置对标库-370%2B_篇高赞文案-success?style=flat-square)](#)
 [![Visual](https://img.shields.io/badge/内置画风-3_套视觉体系_%2B_参考图库-purple?style=flat-square)](#)
@@ -25,11 +25,11 @@
 
 ## 📖 项目简介
 
-**Story Studio（故事工坊）** 是专为 AI Agent（如 Claude Code、Codex、Cursor 等支持 Skill 的智能体）打造的一站式短视频内容创作技能包。
+**史鉴工坊（hforge）** 是专为 AI Agent（如 Claude Code、Codex、Cursor 等支持 Skill 的智能体）打造的一站式短视频内容创作技能包。
 
 做历史或人物故事类短视频，往往要在**找选题、查史料、磨开头钩子、写口播稿、配音、对齐时间轴、拆分数十个分镜、保持AI生图画风一致、以及在剪映里一帧帧打关键帧做推拉运镜**之间反复横跳。
 
-**Story Studio 把这一整套工业化流水线装进了一个 Skill 里：**
+**史鉴工坊 把这一整套工业化流水线装进了一个 Skill 里：**
 
 ```mermaid
 flowchart LR
@@ -59,12 +59,12 @@ flowchart LR
 
 ### 1️⃣ 文稿创作：双风格 Writing-DNA + 370+ 篇对标文案库
 
-不只是简单地让大模型“写篇故事”，Story Studio 内置了两个完整的专业级写作子模块，提炼自数百篇视频号与短视频平台的高赞爆款逐字稿：
+不只是简单地让大模型“写篇故事”，史鉴工坊 内置了两个完整的专业级写作子模块，提炼自数百篇视频号与短视频平台的高赞爆款逐字稿：
 
 | 内置写作风格                                | 适用赛道与特点                                                                                                                                                                                                             | 内置语料与 DNA 武器库                                                                                                                                                                            |
 | :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **📜 历史叙事风**<br>`historical-narrative`  | **把历史中值得追问的一件事讲透**<br>• 开头抛出具体历史反常或核心问题<br>• 正文以人物行动、制度条件与连锁后果推进<br>• 结尾严密兑现开头悬念，拒绝空泛升华                                                                   | • **57 篇** 头部爆款历史叙事逐字稿与结构拆解<br>• **9 类黄金开头钩子机制**（逐篇前几秒文字窗口分析）<br>• 内置《选题库》《史实与素材核验》《字数与查重工具》                                     |
-| **👩 人物故事风**<br>`yuling-characterstory` | **真实历史人物与传奇女性连载/单集**<br>• 经典节奏：`钩子先行 → 巅峰数字 → 可谁也没想到 → 磨难场景 → 金句收尾`<br>• 极具感染力的情感锚点（「您说……怎么会……」与精确数字节点）<br>• 支持单集深度人物传记或 2~3 集连续剧式排期 | • **300+ 篇** 头部爆款逐字稿深度蒸馏全套人物写作 DNA<br>• 覆盖民国名媛、巾帼英雄、时代先驱、传奇母亲等多赛道高赞对标库<br>• **A/B/C/D/E 五大类开头钩子模板** + 选题策略 DNA + 情绪升华与金句模板 |
+| **👩 人物故事风**<br>`yuling-character-biography` | **真实历史人物与传奇女性连载/单集**<br>• 经典节奏：`钩子先行 → 巅峰数字 → 可谁也没想到 → 磨难场景 → 金句收尾`<br>• 极具感染力的情感锚点（「您说……怎么会……」与精确数字节点）<br>• 支持单集深度人物传记或 2~3 集连续剧式排期 | • **300+ 篇** 头部爆款逐字稿深度蒸馏全套人物写作 DNA<br>• 覆盖民国名媛、巾帼英雄、时代先驱、传奇母亲等多赛道高赞对标库<br>• **A/B/C/D/E 五大类开头钩子模板** + 选题策略 DNA + 情绪升华与金句模板 |
 
 **💡 写作模块能帮你做什么细节优化？**
 - **爆款选题策划**：不知道发什么？指定朝代或人物方向，Agent 结合 370+ 篇对标库为你策划具备戏剧张力的选题卡与切入角度。
@@ -96,7 +96,7 @@ flowchart LR
 
 ### 3️⃣ 配音与字幕对齐：豆包语音大模型 / 自备音频双通道
 
-配音是连接「好文案」与「精准画面节奏」的核心桥梁。Story Studio 提供两条极其顺畅的配音路径：
+配音是连接「好文案」与「精准画面节奏」的核心桥梁。hforge 提供两条极其顺畅的配音路径：
 
 #### 路径 A：推荐配置「豆包语音大模型」，由 Agent 全自动合成
 - 基于火山引擎豆包语音 **V3 双向流式 WebSocket 协议**，支持最新的 `seed-tts-2.0`（2.0通用高表现力音色）与 `seed-icl-2.0`（声音复刻2.0音色）。
@@ -114,7 +114,7 @@ flowchart LR
 
 ### 4️⃣ 剪映专业版草稿导出：推拉运镜与时间轴一键成型
 
-所有素材就绪后，Story Studio 会直接生成**剪映专业版（JianYing Pro）可识别的本地草稿工程**：
+所有素材就绪后，hforge 会直接生成**剪映专业版（JianYing Pro）可识别的本地草稿工程**：
 
 - **语义对齐核验（Semantic Alignment）**：导出前自动执行 `check_handoff.py` 与逐镜语义核查，确保每一张图片出现的时间段，正好对应口播里讲到的那个人物和事件。
 - **电影感动态运镜（拒绝死板静帧）**：
@@ -136,8 +136,8 @@ flowchart LR
 
 ```text
 请帮我把这个 GitHub 仓库克隆安装到你的 skills 目录，并完成依赖环境检查：
-https://github.com/konlu/story-studio
-Agent 会自动识别自身 skills 目录（如 `~/.codex/skills/story-studio`），自动拉取并完成接入！
+https://github.com/konlu/hforge
+Agent 会自动识别自身 skills 目录（如 `~/.codex/skills/hforge`），自动拉取并完成接入！
 
 ---
 
@@ -146,12 +146,12 @@ Agent 会自动识别自身 skills 目录（如 `~/.codex/skills/story-studio`�
 
 ```powershell
 # Windows (PowerShell)
-git clone https://github.com/konlu/story-studio.git "$HOME\.codex\skills\story-studio"
+git clone https://github.com/konlu/hforge.git "$HOME\.codex\skills\hforge"
 ```
 
 ```bash
 # macOS / Linux
-git clone https://github.com/konlu/story-studio.git ~/.codex/skills/story-studio
+git clone https://github.com/konlu/hforge.git ~/.codex/skills/hforge
 ```
 > 💡 *注：若使用 Claude Code 或其他 Agent，只需将路径中的 `.codex` 替换为 `.claude` 或 `.agents` 即可。*
 
@@ -171,7 +171,7 @@ git clone https://github.com/konlu/story-studio.git ~/.codex/skills/story-studio
 无需自己手动折腾 Python、Node.js、FFmpeg 或配置剪映路径！安装后直接对 Agent 发送：
 
 ```text
-使用 $story-studio，帮我一键检查并自动配置全部运行环境。
+使用 $hforge，帮我一键检查并自动配置全部运行环境。
 ```
 
 > 💡 **智能按需初始化**：如果你只用它写文案，它不会安装任何多媒体组件；当需要配音、转录和导出剪映草稿时，原生启动器（`bootstrap.ps1` / `bootstrap.sh`）会自动在用户独立数据目录配置好 Python 3.11 (`uv`)、Node.js LTS、`Coli`、`FFmpeg`、`pyJianYingDraft` 等全部依赖。
@@ -183,7 +183,7 @@ git clone https://github.com/konlu/story-studio.git ~/.codex/skills/story-studio
 
 ## 🎛️ 灵活的工作流开关
 
-Story Studio 内部通过 **写作（`write`）、配图（`illustrate`）、剪映草稿（`draft`）** 三个主开关控制边界，配音与转录作为无缝衔接步骤按需触发。
+hforge 内部通过 **写作（`write`）、配图（`illustrate`）、剪映草稿（`draft`）** 三个主开关控制边界，配音与转录作为无缝衔接步骤按需触发。
 
 你不需要写任何配置文件，直接用自然语言指挥，或者显式声明开关状态：
 
@@ -200,7 +200,7 @@ Story Studio 内部通过 **写作（`write`）、配图（`illustrate`）、剪
 
 ### 场景 1：全流程一条龙制作（从选题文案到剪映草稿）
 ```text
-使用 $story-studio，制作一期关于「张居正考成法改革」的历史短视频。
+使用 $hforge，制作一期关于「张居正考成法改革」的历史短视频。
 1. 写作：采用历史叙事风，约 1800 字，先给我 3 个不同切入角度的开头钩子让我选，定稿后再继续。
 2. 配音：定稿后使用我配置好的豆包语音生成 MP3（如果还没配置请引导我）。
 3. 配图：用 Coli 对齐时间轴后拆成 20 镜，采用「厚涂历史漫画风」，9:16 竖屏生成配图，并带 3:4 和 4:3 封面。
@@ -209,28 +209,28 @@ Story Studio 内部通过 **写作（`write`）、配图（`illustrate`）、剪
 
 ### 场景 2：使用「人物故事风」写女性传奇口播稿
 ```text
-使用 $story-studio，只写一篇关于「林巧稚」的人物故事口播稿。
+使用 $hforge，只写一篇关于「林巧稚」的人物故事口播稿。
 采用人物故事风，单集约 1600 字。
 请先核实她的生平关键时间节点与真实数字，使用“数字连排”或“反常画面”做开头钩子，只交付文稿和事实核查表。
 ```
 
 ### 场景 3：自己准备好配音放在文件夹中，让 Agent 读取并完成后期
 ```text
-使用 $story-studio，继续当前文件夹里的项目。
+使用 $hforge，继续当前文件夹里的项目。
 我已经把定稿文案 `script.md` 和我自己录好的配音 `voice.mp3` 放进这个文件夹了。
 请直接读取我的配音文件，用本地 Coli 生成字幕对齐时间轴，按「黑白叙事风」拆 18 个分镜并生成配图，最后直接导出到我的剪映草稿箱。
 ```
 
 ### 场景 4：只拆解分镜与生图提示词（交给外部 Midjourney / 即梦 等工具生图）
 ```text
-使用 $story-studio，写作关、配图开、剪映草稿关。
+使用 $hforge，写作关、配图开、剪映草稿关。
 读取文件夹里的定稿和 MP3 配音，先做音文时间对齐，然后按「历史写实风」拆解 22 个分镜。
 注意：这次只输出带时间戳的 STORYBOARD.md 分镜表和每镜独立的完整中文生图提示词，不要实际调用生图工具。
 ```
 
 ### 场景 5：单镜精准返工与版本迭代
 ```text
-使用 $story-studio，继续这个项目。
+使用 $hforge，继续这个项目。
 文案、配音和前面生成的图片都保持不变，只重做第 8 镜和第 15 镜的配图（第 8 镜人物年龄改成晚年阶段），然后用新图片重新导出一版带可编辑字幕的剪映草稿，保留旧草稿别覆盖。
 ```
 
@@ -240,21 +240,21 @@ Story Studio 内部通过 **写作（`write`）、配图（`illustrate`）、剪
 
 ### 仓库结构一览
 ```text
-story-studio/
+hforge/
 ├── SKILL.md                        # AI Agent 核心总控指令与路由规则
 ├── README.md                       # 项目说明文档
 ├── install.bat / .ps1 / .sh        # 跨平台一键安装脚本（自动寻路部署）
-├── scripts/                        # 跨平台环境自动初始化、豆包TTS、交接核验等核心脚本
+├── tools/                        # 跨平台环境自动初始化、豆包TTS、交接核验等核心脚本
 │   ├── bootstrap.ps1 / .sh         # Windows / macOS / Linux 零依赖启动器
 │   ├── doubao_tts.py               # 豆包语音 V3 双向 WebSocket 合成客户端
 │   ├── voice_settings.py           # 音色配置与本地加密凭据管理
 │   └── check_handoff.py            # 剪映导出前的音图语义与时间轴一致性检查
-├── references/                     # 事实核查原则、豆包配置指南、扩展赛道说明等
-└── modules/                        # 内置四大专业子模块
-    ├── history-writing/            # 【历史叙事模块】含 DNA 规则 + 57 篇高赞原稿与钩子分析
-    ├── characterstory-writing/     # 【人物故事模块】含人物故事 DNA + 300+ 篇爆款对标语料库
-    ├── history-image/              # 【分镜配图模块】含 3 套画风规则 + 12 张正文参考图 + 封面参考
-    └── render-history-video/       # 【剪映草稿模块】含时间轴对齐、缓入缓出推拉运镜与草稿导出
+├── docs/                     # 事实核查原则、豆包配置指南、扩展赛道说明等
+└── core-modules/                        # 内置四大专业子模块
+    ├── history-narrative/            # 【历史叙事模块】含 DNA 规则 + 57 篇高赞原稿与钩子分析
+    ├── character-biography/     # 【人物故事模块】含人物故事 DNA + 300+ 篇爆款对标语料库
+    ├── history-illustration/              # 【分镜配图模块】含 3 套画风规则 + 12 张正文参考图 + 封面参考
+    └── video-render/       # 【剪映草稿模块】含时间轴对齐、缓入缓出推拉运镜与草稿导出
 ```
 
 ### 每次创作你会得到什么交付物？
@@ -272,7 +272,7 @@ story-studio/
 ## 📦 依赖与隐私说明
 
 ### 1. 自动管理的运行环境
-Story Studio 内置的启动器会在技能目录之外的**用户数据目录**（Windows 下为 `%LOCALAPPDATA%\story-studio`，macOS/Linux 为 `~/.local/share/story-studio`）自动按需配置：
+史鉴工坊 内置的启动器会在技能目录之外的**用户数据目录**（Windows 下为 `%LOCALAPPDATA%\hforge`，macOS/Linux 为 `~/.local/share/hforge`）自动按需配置：
 - **Python 3.11**（通过 `uv` 自动管理独立虚拟环境，安装 `websockets==15.0.1`、`pyJianYingDraft==0.3.1`、`Pillow`、`NumPy`、`pymediainfo` 等）
 - **Node.js 20+ LTS & Coli**：用于本地离线语音转字幕（基于 `sherpa-onnx`），**无需调用任何收费云端字幕 API**
 - **FFmpeg & ffprobe**：用于音频完整性解码校验与可选的本地视频渲染
@@ -287,7 +287,7 @@ Story Studio 内置的启动器会在技能目录之外的**用户数据目录**
 
 ## 🙏 致谢 (Acknowledgements)
 
-Story Studio 的诞生离不开以下优秀开源项目与基础设施的支持，特此向相关作者与维护者致敬：
+hforge 的诞生离不开以下优秀开源项目与基础设施的支持，特此向相关作者与维护者致敬：
 
 - **[GuanYixuan / pyJianYingDraft](https://github.com/GuanYixuan/pyJianYingDraft)** (Apache-2.0)：提供强大的剪映专业版草稿数据结构、轨道、关键帧与工程生成能力。
 - **[MarsWave / Coli](https://github.com/marswaveai/coli)** & **[k2-fsa / sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx)**：提供快速、精准的本地离线语音识别 CLI 与底层推理引擎。
@@ -301,7 +301,7 @@ Story Studio 的诞生离不开以下优秀开源项目与基础设施的支持�
 
 <span id="sponsor"></span>
 
-如果你觉得 **Story Studio** 对你的短视频创作、自媒体运营或 AI Agent 工作流有所帮助，欢迎赞赏支持！
+如果你觉得 **hforge** 对你的短视频创作、自媒体运营或 AI Agent 工作流有所帮助，欢迎赞赏支持！
 
 > **特别声明：本项目所有的赞赏将会全部捐献给山区儿童以及重病患者，用于公益助学与医疗救助。感谢每一位支持者的善意与温度！**
 
@@ -319,9 +319,9 @@ Story Studio 的诞生离不开以下优秀开源项目与基础设施的支持�
 
 欢迎自媒体创作者、独立开发者、AI 爱好者一起交流探索新玩法：
 
-- **微信咨询**：添加个人微信：muyu1888（请备注：`Story Studio` 或 `自媒体创作`）
+- **微信咨询**：添加个人微信：muyu1888（请备注：`hforge` 或 `自媒体创作`）
 - **电子邮箱**：`lukonn@163.com`
-- **问题反馈**：欢迎在 [GitHub Issues](https://github.com/konlu/story-studio/issues) 提交 Bug 反馈与新功能建议
+- **问题反馈**：欢迎在 [GitHub Issues](https://github.com/konlu/hforge/issues) 提交 Bug 反馈与新功能建议
 
 ---
 
