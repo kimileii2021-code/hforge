@@ -6,18 +6,18 @@
 
 ## 调用约定
 
-用户只需调用 `hforge` 并开启剪映草稿。草稿导出由 `tools/export_jianying.py` 直接调用pyJianYingDraft，说明见 [docs/jianying.md](docs/jianying.md)。
+用户只需调用 `hforge` 并开启剪映草稿。草稿导出由 `tools/export_jianying.py` 直接调用pyJianYingDraft，说明见 [剪映导出说明](core-modules/video-render/references/jianying.md)。
 
 - **禁止**把「请改去调用剪映 skill」当作交付步骤
 - 本 skill 被激活后，直接按下面流程做对齐、写 `plan.json`、导出草稿
 
 ## 接收上游已对齐分镜
 
-新项目由内置配图模块按 [先音频后分镜](../history-image/docs/audio-first-storyboard.md) 完成 Coli 转录 → SRT 核验 → 带时间与原文的分镜表 → 按表生图。渲染直接复用该表 start/end、时间依据与实际图片映射，不重新均分时间、不以模糊匹配覆盖已核验切点。配音或文稿变更先回到音文核验。
+新项目由内置配图模块按 [先音频后分镜](../history-illustration/references/audio-first-storyboard.md) 完成 Coli 转录 → SRT 核验 → 带时间与原文的分镜表 → 按表生图。渲染直接复用该表 start/end、时间依据与实际图片映射，不重新均分时间、不以模糊匹配覆盖已核验切点。配音或文稿变更先回到音文核验。
 
 ## 语义对齐优先
 
-必须读取并执行 [逐镜语义对齐](docs/semantic-alignment.md)。图片必须对应当前正在讲述的人物、时空和事件阶段；复用上游已核验的原文与音频时间，逐张核对实际图片与该时段原文，再复查镜长；发现版本或时间问题先退回音文核验。导出前所有镜头完成语义核验，不能以节奏检查通过代替。
+必须读取并执行 [逐镜语义对齐](core-modules/video-render/references/semantic-alignment.md)。图片必须对应当前正在讲述的人物、时空和事件阶段；复用上游已核验的原文与音频时间，逐张核对实际图片与该时段原文，再复查镜长；发现版本或时间问题先退回音文核验。导出前所有镜头完成语义核验，不能以节奏检查通过代替。
 
 ## 素材与时间对齐
 
@@ -25,20 +25,20 @@
 - 封面是可选交付，缺失不阻挡正文草稿。已有封面可检查其与正文画风是否一致；仅本次配图开关开启且请求包含对应生图时才能补做，否则记录缺口，不生图。明确指定独立封面风格的情况记录在 `edit/project.md`。只复用现成图且不改图时，无需为了渲染重新选择画风。
 - 有参考视频时用 ffprobe 读取画幅、帧率，并抽取同镜头内不同时间的画面对比运镜幅度。保留原图片风格；参考里的字幕、粒子、配乐不自动复制。
 - SRT 是讲述时间依据，不是必须显示的文字。默认无字幕；已有配音连续保留，不因切图而切音频，已有 SRT 经核对来自当前配音且可用时不重复转录。
-- **旧项目有配音但没有 SRT 时，先独立转录再核对现有分镜。** 使用 `py -3.11 "<hforge目录>/core-core-modules/history-illustration/tools/transcribe_with_coli.py" --audio "<配音>" --out-dir "<新转录版本目录>"`，无需分镜表即可产出原始 SRT 和时间戳。原有 `py -3.11 "<hforge目录>/core-core-modules/video-render/tools/align_with_coli.py" --audio "<配音>" --storyboard "<表>" --asr-json "<coli_asr.json>" --out-dir "<新核验目录>"` 仅用于后续保守复核；它的按镜 SRT 不是真正的前置转录字幕。已有图与实际口播不符时按修复范围处理，不强套旧边界。
+- **旧项目有配音但没有 SRT 时，先独立转录再核对现有分镜。** 使用 `py -3.11 "<hforge目录>/core-modules/history-illustration/scripts/transcribe_with_coli.py" --audio "<配音>" --out-dir "<新转录版本目录>"`，无需分镜表即可产出原始 SRT 和时间戳。原有 `py -3.11 "<hforge目录>/core-modules/video-render/scripts/align_with_coli.py" --audio "<配音>" --storyboard "<表>" --asr-json "<coli_asr.json>" --out-dir "<新核验目录>"` 仅用于后续保守复核；它的按镜 SRT 不是真正的前置转录字幕。已有图与实际口播不符时按修复范围处理，不强套旧边界。
 - 优先使用上游已核验分镜表的显示 `start/end` 生成 `plan.json`。旧项目需要补做边界核验时，才使用 `alignment.json` 的显示 `start/end`；两条路径都保留真实发声 `audio_start` 与边界证据并完成语义复核。若 Coli 不存在、转录失败或没有可用时间戳，必须报告阻塞并停止精确渲染，不能静默退回字符比例估算。不要调用火山字幕 API，也不要配置或恢复 `VOLCENGINE_SUBTITLE_APP_ID`、`VOLCENGINE_SUBTITLE_SECRET_KEY`、`VOLCENGINE_SUBTITLE_ACCESS_TOKEN`。
 - 分镜文稿和 SRT 可能是长短两个版本。逐段匹配叙事含义，为每镜记录 SRT 起始锚点；不能按字数或图片数量均分。分镜无 audio_start 时不把空值当作零。
-- 起始画面从 0 秒覆盖。末镜覆盖完整音频和 SRT 结尾。对齐后必须执行 [节奏复核与修正](docs/pacing-review.md)，先诊断再处理过长、过短及连续密集切图；不要只报告平均时长。多个候选配音无法判断时才询问。
+- 起始画面从 0 秒覆盖。末镜覆盖完整音频和 SRT 结尾。对齐后必须执行 [节奏复核与修正](core-modules/video-render/references/pacing-review.md)，先诊断再处理过长、过短及连续密集切图；不要只报告平均时长。多个候选配音无法判断时才询问。
 
 ## 制作
 
-创建 `<素材目录>/edit/<本次版本>/plan.json`。参数与示例见 [docs/plan.md](docs/plan.md)。脚本接受任意素材路径，不依赖技能目录中的素材。
+创建 `<素材目录>/edit/<本次版本>/plan.json`。参数与示例见 [plan.md](core-modules/video-render/references/plan.md)。脚本接受任意素材路径，不依赖技能目录中的素材。
 
 依赖Python3.10+、`pyJianYingDraft==0.3.1`、Pillow、NumPy与ffmpeg/ffprobe；原库还需要可用的libmediainfo。无SRT时需Coli。按 [初始化流程](../../docs/setup.md) 配置，运行环境保存在技能目录之外。Coli在本地转录，不调用火山或其他云端字幕服务。
 
 ### 默认：剪映草稿
 
-先读 [docs/jianying.md](docs/jianying.md)，再用封装脚本：
+先读 [剪映导出说明](core-modules/video-render/references/jianying.md)，再用封装脚本：
 
 ```powershell
 py -3.11 "<skill目录>/tools/export_jianying.py" "<版本目录>/plan.json"
@@ -49,7 +49,7 @@ py -3.11 "<skill目录>/tools/export_jianying.py" "<版本目录>/plan.json"
 - 不要为了出草稿去逐帧编码。剪映预览和导出才是成片步骤。
 - 若使用剪映 10.x，不要跑 UI 自动导出；生成草稿后让用户打开剪映导出。新草稿可能要重启剪映，或先打开一个旧草稿再退回列表才能看见。
 - 修订另建版本目录或换草稿名，保留用户素材和旧成片。
-- 导出失败时按 [docs/jianying.md](docs/jianying.md) 检查原库版本、目录、素材与元数据读取；报告具体问题并保留旧工程。
+- 导出失败时按 [剪映导出说明](core-modules/video-render/references/jianying.md) 检查原库版本、目录、素材与元数据读取；报告具体问题并保留旧工程。
 
 ### 可选：本地 ffmpeg 成片
 

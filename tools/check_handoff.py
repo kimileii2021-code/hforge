@@ -17,7 +17,7 @@ from hforge_runtime import activate_runtime
 if __name__ == "__main__":
     activate_runtime()
 
-MODULE_SCRIPTS = Path(__file__).resolve().parents[1] / "core-modules/video-render/tools"
+MODULE_SCRIPTS = Path(__file__).resolve().parents[1] / "core-modules/video-render/scripts"
 sys.path.insert(0, str(MODULE_SCRIPTS))
 
 

@@ -9,7 +9,7 @@
 草稿根目录优先级：命令行 `--drafts-root` → `JY_PROJECTS_ROOT` → 用户runtime配置 → 剪映globalSetting中的草稿位置 → 唯一可确定且已经存在的标准目录。新安装由自动初始化创建标准目录；已有自定义设置仍无法读取时由Agent查看剪映设置核对，不先要求用户手动复制路径。
 
 ```sh
-python "<hforge目录>/core-core-modules/video-render/tools/export_jianying.py" "<版本目录>/plan.json" --drafts-root "<剪映设置中的草稿目录>"
+python "<hforge目录>/core-modules/video-render/scripts/export_jianying.py" "<版本目录>/plan.json" --drafts-root "<剪映设置中的草稿目录>"
 ```
 
 上述python应替换为初始化配置中记录的Python绝对路径；便携安装不要求全局PATH或py启动器。入口会自动使用已配置的Python环境。

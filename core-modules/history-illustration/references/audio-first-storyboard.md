@@ -7,7 +7,7 @@
 1. **确定数量方式与素材。** 用户指定 N 张则锁定 N；用户要求根据全文自动拆分则先读全文形成初步镜数，实际分配在时间轴核验后完成，无须要求用户另选 N。读取完整定稿与对应最终配音，区分正文、标题及不朗读备注；已有明确素材路径直接使用。画风选择可同步进行，不妨碍转录。
 2. **先用本机 Coli 转录，完全不依赖分镜表。** 在新版本目录运行：
 
-   `py -3.11 "<hforge目录>/core-core-modules/history-illustration/tools/transcribe_with_coli.py" --audio "<最终配音>" --out-dir "<项目>/transcription/<版本>" --model sensevoice --language zh`
+   `py -3.11 "<hforge目录>/core-modules/history-illustration/scripts/transcribe_with_coli.py" --audio "<最终配音>" --out-dir "<项目>/transcription/<版本>" --model sensevoice --language zh`
 
    输出原始 coli_asr.json、transcript.srt、transcript_timing.json，保留音频及字幕哈希。脚本从真实 token 起点分组字幕；字幕结束使用下一 token 起点或音频结束，是字幕显示边界，不冒充精确发声结束。没有标点时分组只为可读性，不能认为一条 SRT 就是一个完整句子或一个分镜。原始 tokens/timestamps 保留供句内事件定位。只接受可用时间戳，不按字数猜测。不得调用火山字幕 API 或恢复其凭据。
 3. **核对 SRT 与全文。** 比较全文顺序、人物、年份、否定词、重复语句及漏句。转录错字可依据原稿和实际音频纠正，并保存原始记录；真实口播与定稿不同则记录版本差异，不能把未读的原稿文字硬塞进字幕。纠错后需要维护文字与原始 token 时间的对应关系，不按新字符数重分时间。字幕及音频来源相同且已核验时复用，不重复转录；用户指定重新 Coli 转录时照做。无来源或只凭文件名不能认定是当前配音的字幕。
